@@ -1,0 +1,20 @@
+warden svc up
+warden env up
+
+git status
+git reset --hard
+git pull
+
+warden shell
+
+composer install --ignore-platform-reqs
+
+rm -rf var/cache var/view_preprocessed pub/static/frontend/
+n98-magerun cache:flush
+n98-magerun setup:upgrade
+
+____________________________
+
+n98-magerun module:disable Magento_TwoFactorAuth
+
+n98-magerun admin:user:create --admin-user=pavelbileush --admin-email=pavelbileush@gmail.com --admin-password=Q964512w --admin-firstname=pavelbileush --admin-lastname=pavelbileush
