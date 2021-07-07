@@ -3,11 +3,28 @@
 <page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceContainer name="header.container">
-            <block name="header.customer.data" template="Magento_Theme::header-customer-data.phtml" before="-">
+        <referenceContainer name="header-wrapper">
+            <block name="header.customer.data" template="Magento_Theme::header-customer-data.phtml" after="-">
                 <arguments>
-                    <argument name="first_name" xsi:type="string">User firs name</argument>
-                    <argument name="second_name" xsi:type="string">User second name</argument>
+                    <argument name="first_name" xsi:type="string">Pavel</argument>
+                    <argument name="second_name" xsi:type="string">Bileush</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="main.content">
+            <block class="Magento\Cms\Block\Block" name="home_block_test">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">home_block_test</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="footer">
+            <block name="footer.customer.data" template="Magento_Theme::footer-customer-data.phtml" before="-">
+                <arguments>
+                    <argument name="first_name" xsi:type="string">Pavel</argument>
+                    <argument name="second_name" xsi:type="string">Bileush</argument>
                 </arguments>
             </block>
         </referenceContainer>
